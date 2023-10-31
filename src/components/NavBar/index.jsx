@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   return (
-    <header className="sticky top-0 h-[8vh] w-full">
+    <header className="fixed top-0 z-50 h-[8vh] w-full">
       <Navbar className="bg-primary px-4 text-primary dark:bg-primary dark:text-primary md:px-10">
         <Navbar.Brand>
           <NavLink to="/">
