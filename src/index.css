@@ -1,3 +1,36 @@
+@import url("https://fonts.cdnfonts.com/css/open-sauce-one");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --text: #030704;
+    --background: #fafffb;
+    --primary: #34ea64;
+    --secondary: #bef8d3;
+    --accent: #16d449;
+  }
+  .dark {
+    --text: #f8fcf9;
+    --background: #0f100f;
+    --primary: #15cb46;
+    --secondary: #07411c;
+    --accent: #2be95d;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sauce One", sans-serif;
+}
+
+body{
+  background-color: var(--background);
+  color: var(--text);
+}

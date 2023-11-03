@@ -1,6 +1,8 @@
-import Button from "@components/atoms/Button";
-import { Modal } from "@components/organisms";
 import { useEffect, useState } from "react";
+
+import { NavBar } from "@components";
+import { Modal } from "@components/organisms";
+import Button from "@components/atoms/Button";
 import { BsCheck2Circle } from "react-icons/bs";
 export const Home = () => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -15,32 +17,27 @@ export const Home = () => {
     }
   }, [isShowModal]);
   return (
-    <div>
-      <h1 className="text-3xl">Home</h1>
-      <button
-        onClick={() => {
-          setIsShowModal(!isShowModal);
-        }}
-      >
-        show Modal
-      </button>
-      <Modal
-        modalHeader={false}
-        iconClose={true}
-        onClose={() => {
-          setIsShowModal(!isShowModal);
-        }}
-        showModal={isShowModal}
-      >
-        <div className="flex flex-col items-center justify-center gap-y-4 px-5">
-          <BsCheck2Circle className="text-5xl text-emerald-600" />
-          <h1>Berhasil</h1>
-          <h1 className="text-center text-xl">
-            Barang Berhasil ditambahkan Kedalam Keranjang
-          </h1>
-        </div>
-      </Modal>
-      <Button />
-    </div>
+    <>
+      <NavBar />
+      <Button onClick={() => setIsShowModal(!isShowModal)}>Show Modal</Button>
+      <div>
+        <Modal
+          modalHeader={false}
+          iconClose={true}
+          onClose={() => {
+            setIsShowModal(!isShowModal);
+          }}
+          showModal={isShowModal}
+        >
+          <div className="flex flex-col items-center justify-center gap-y-4 px-5">
+            <BsCheck2Circle className="text-5xl text-emerald-600" />
+            <h1 className="text-center text-xl text-slate-900">Berhasil</h1>
+            <h1 className="text-center text-xl text-slate-900">
+              Barang Berhasil ditambahkan Kedalam Keranjang
+            </h1>
+          </div>
+        </Modal>
+      </div>
+    </>
   );
 };
