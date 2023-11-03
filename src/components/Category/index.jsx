@@ -34,7 +34,7 @@ const categories = [
 export const Category = () => {
   return (
     <div className="container mx-auto flex flex-col">
-      <h3 className="px-6 text-xl font-semibold md:px-12">Categories</h3>
+      <h3 className="px-6 text-xl font-bold md:px-12">Categories</h3>
       <div className="flex justify-center">
         <div className="mb-4 grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-x-20">
           {categories.map((category) => {

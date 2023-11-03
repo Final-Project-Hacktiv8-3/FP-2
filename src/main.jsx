@@ -4,6 +4,9 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home } from "@pages";
 import { Flowbite } from "flowbite-react";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import { Wrapper } from "@components";
 
 export const Router = createBrowserRouter([
   {
@@ -14,8 +17,12 @@ export const Router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Flowbite>
-      <RouterProvider router={Router} />
-    </Flowbite>
+    <Provider store={store}>
+      <Flowbite>
+        <Wrapper>
+          <RouterProvider router={Router} />
+        </Wrapper>
+      </Flowbite>
+    </Provider>
   </React.StrictMode>,
 );

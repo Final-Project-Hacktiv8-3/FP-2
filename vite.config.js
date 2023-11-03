@@ -11,6 +11,7 @@ export default defineConfig({
       "@service": "/src/service",
       "@pages": "/src/pages",
       "@hooks": "/src/hooks",
+      "@utils": "/src/utils",
     },
   },
 });
