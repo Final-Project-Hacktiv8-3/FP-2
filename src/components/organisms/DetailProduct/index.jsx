@@ -6,12 +6,15 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Modal } from "@components/organisms";
 import { BsCheck2Circle } from "react-icons/bs";
+import { addToCart } from "../../../redux/adding/action";
+import { useDispatch } from "react-redux";
 
 export const DetailProduct = ({ product }) => {
   const { title, description, image, price } = product;
   const [currentQuantity, setCurrentQuantity] = useState(1);
   const latest = useSelector((state) => state.latestUpdate);
   const [isShowModal, setIsShowModal] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (isShowModal === true) {
@@ -25,7 +28,11 @@ export const DetailProduct = ({ product }) => {
   }, [isShowModal]);
 
   /*TODO: handle add to cart from redux*/
-  const handleAddToCart = () => {
+  const handleAddToCart = (title,image,id,price,stuff) => {
+    // if(stuff !== 0){
+      dispatch(addToCart(title,image,id,price,stuff));
+    // }
+     
     setIsShowModal(!isShowModal);
   };
 
@@ -82,7 +89,7 @@ export const DetailProduct = ({ product }) => {
             </div>
             <Button
               className="bg-color mt-4 flex w-full items-center justify-center gap-4 text-lg font-semibold hover:bg-accent"
-              onClick={handleAddToCart}
+              onClick={() =>handleAddToCart(product?.title,product?.image,product?.id,product?.price,currentQuantity)}
             >
               <PiShoppingCartSimple size={24} /> Add to Cart
             </Button>

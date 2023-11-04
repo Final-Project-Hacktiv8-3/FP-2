@@ -1,5 +1,4 @@
 export const addToCart = (title,image,id,price,stuff) => {
-  console.log(stuff)
   const userId = localStorage.getItem('userId');
   return {
     type: 'ADD_TO_CART',
