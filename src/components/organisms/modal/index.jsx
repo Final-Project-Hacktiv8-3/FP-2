@@ -55,7 +55,7 @@ export const Modal = ({
 };
 Modal.propTypes = {
   showModal: PropTypes.bool,
-  onClose: PropTypes.bool,
+  onClose: PropTypes.func,
   children: PropTypes.node,
   modalTitle: PropTypes.string,
   modalFooter: PropTypes.node,
