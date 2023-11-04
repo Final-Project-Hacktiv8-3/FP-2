@@ -6,7 +6,7 @@ import { Home } from "@pages";
 import { Flowbite } from "flowbite-react";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import { Wrapper } from "@components";
+import { Wrapper } from "@components/template";
 
 export const Router = createBrowserRouter([
   {
