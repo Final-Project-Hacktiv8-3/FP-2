@@ -10,6 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        color: "var(--primary)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         accent: "var(--accent)",
