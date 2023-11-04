@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 
+import { NavBar, Modal, CarouselItem, Category } from "@components/organisms";
+import Button from "@components/atoms/Button";
+import { BsCheck2Circle } from "react-icons/bs";
+
 import { NavBar } from "@components";
 import { Modal } from "@components/organisms";
 import Button from "@components/atoms/Button";
 import { BsCheck2Circle } from "react-icons/bs";
 export const Home = () => {
   const [isShowModal, setIsShowModal] = useState(false);
+  
   useEffect(() => {
     if (isShowModal === true) {
       const timeout = setTimeout(() => {
@@ -16,9 +21,12 @@ export const Home = () => {
       };
     }
   }, [isShowModal]);
+
   return (
     <>
       <NavBar />
+      <CarouselItem />
+      <Category />
       <Button onClick={() => setIsShowModal(!isShowModal)}>Show Modal</Button>
       <div>
         <Modal
