@@ -1,34 +1,42 @@
-import { NavBar, CarouselItem, Category, ProductCard } from "@components";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../redux/products/action";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
+import { NavBar } from "@components";
+import { Modal } from "@components/organisms";
+import Button from "@components/atoms/Button";
+import { BsCheck2Circle } from "react-icons/bs";
 export const Home = () => {
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
-
+  const [isShowModal, setIsShowModal] = useState(false);
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
-
+    if (isShowModal === true) {
+      const timeout = setTimeout(() => {
+        setIsShowModal(false);
+      }, 2000);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [isShowModal]);
   return (
     <>
       <NavBar />
-      <CarouselItem />
-      <Category />
-      <div className="flex items-center gap-4 px-6 md:px-12">
-        <h3 className="text-center text-xl font-bold  md:text-left">
-          Popular Products
-        </h3>
-        <Link to="/products" className="text-sm text-accent">
-          See All
-        </Link>
-      </div>
-      <div className="my-10 flex flex-wrap justify-center gap-8">
-        {products.data.slice(0, 4).map((product) => {
-          return <ProductCard key={product.id} product={product} />;
-        })}
+      <Button onClick={() => setIsShowModal(!isShowModal)}>Show Modal</Button>
+      <div>
+        <Modal
+          modalHeader={false}
+          iconClose={true}
+          onClose={() => {
+            setIsShowModal(!isShowModal);
+          }}
+          showModal={isShowModal}
+        >
+          <div className="flex flex-col items-center justify-center gap-y-4 px-5">
+            <BsCheck2Circle className="text-5xl text-emerald-600" />
+            <h1 className="text-center text-xl text-slate-900">Berhasil</h1>
+            <h1 className="text-center text-xl text-slate-900">
+              Barang Berhasil ditambahkan Kedalam Keranjang
+            </h1>
+          </div>
+        </Modal>
       </div>
     </>
   );
