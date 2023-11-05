@@ -6,10 +6,14 @@ import { formattedPrice } from "@utils";
 import { useEffect, useState } from "react";
 import { Modal } from "..";
 import { BsCheck2Circle } from "react-icons/bs";
+import { useDispatch} from 'react-redux';
+import { addToCart } from "@redux/adding/action";
 
 export const ProductCard = ({ product }) => {
   const { id, title, image, price, category, rating } = product;
   const [isShowModal, setIsShowModal] = useState(false);
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
     if (isShowModal === true) {
@@ -22,7 +26,9 @@ export const ProductCard = ({ product }) => {
     }
   }, [isShowModal]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (title,image,id,price,quantity) => {
+
+    dispatch(addToCart(title,image,id,price,quantity));
     setIsShowModal(!isShowModal);
   };
 
@@ -32,7 +38,7 @@ export const ProductCard = ({ product }) => {
         className="relative max-h-min w-full max-w-[240px] overflow-hidden border-none bg-primary text-primary dark:bg-primary dark:text-primary"
         renderImage={() => (
           <Link to={`/products/${id}`}>
-            <img src={image} alt={title} className="h-40 w-full object-cover" />
+            <img src={image} alt={title} className="h-40 w-full object-contain" />
           </Link>
         )}
       >
@@ -51,7 +57,7 @@ export const ProductCard = ({ product }) => {
               <Rating.Star />
               <p className="ml-2 text-sm">{rating.rate}</p>
             </Rating>
-            <button onClick={handleAddToCart}>
+            <button onClick={() => handleAddToCart(title,image,id,price,1)}>
               <PiShoppingCart className="mr-2 h-5 w-5" />
             </button>
           </div>

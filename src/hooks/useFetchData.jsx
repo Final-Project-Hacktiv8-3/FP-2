@@ -19,6 +19,14 @@ export const useFetchData = (url) => {
         setIsError(error);
         setIsLoading(false);
       }
+      try {
+        const { data } = await axios.get(`https://fakestoreapi.com/products/${url}`);
+        setData(data);
+        setIsLoading(false);
+      } catch (error) {
+        setIsError(error);
+        setIsLoading(false);
+      }
     };
 
     fetchData();

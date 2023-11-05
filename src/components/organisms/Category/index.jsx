@@ -7,25 +7,25 @@ const sizeIcon = "100%";
 const categories = [
   {
     id: 1,
-    name: "Men's clothing",
+    name: "men's clothing",
     image: "../category/men.png",
     icon: <PiTShirt size={sizeIcon} />,
   },
   {
     id: 2,
-    name: "Women's clothing",
+    name: "women's clothing",
     image: "../category/women.png",
     icon: <PiDress size={sizeIcon} />,
   },
   {
     id: 3,
-    name: "Electronics",
+    name: "electronics",
     image: "../category/electronic.png",
     icon: <PiDesktop size={sizeIcon} />,
   },
   {
     id: 4,
-    name: "Jewelry",
+    name: "jewelery",
     image: "../category/jewelery.png",
     icon: <PiSketchLogo size={sizeIcon} />,
   },
@@ -39,7 +39,7 @@ export const Category = () => {
         <div className="mb-4 grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-x-20">
           {categories.map((category) => {
             return (
-              <Link to={`/products`} key={category.id}>
+              <Link to={`/category/${category.name}`} key={category.id}>
                 <Card className="flex h-44 w-32 flex-col items-center justify-center overflow-hidden border-none py-2 dark:bg-primary">
                   {category.icon}
                   <span className="text-center text-sm font-semibold">

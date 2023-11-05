@@ -28,13 +28,19 @@ export const CartPage = ({dataCart}) => {
   return (
     <>
         
+       
         <th scope="row" className="px-6 py-4 bg-transparent font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-            <img className='h-52 w-32  ' src={dataCart?.image}/>
+            <img className='h-44 w-32  ' src={dataCart?.image}/>
+          
         
         </th>
         <td className="px-6 py-4">
             {dataCart?.title}
-            {matchedProduct && quantityStuff > matchedProduct.quantity ? <><p className='ml-28 text-red-800' >(Jumlah yang and input melebihi stock)</p></> : ''}
+            {matchedProduct && quantityStuff > matchedProduct.quantity ? 
+        <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+            <span className="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+        </div> : ''}
+             
         </td>
         <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
         {carts.cartItems.length ? (
@@ -43,7 +49,10 @@ export const CartPage = ({dataCart}) => {
                   <div className="flex-auto flex space-x-4">
                    <button type="button" className="text-white bg-color hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=> handleSubtractStuff(dataCarts.title,dataCarts.image,dataCarts.id,dataCarts.price,quantityStuff,dataCart.restQuantity)}  >-</button>
                       <input className="required:border-red-500 bg-transparent text-center w-5" value={quantityStuff} /> <br/>
+                      
                     <button type="button" className="text-white bg-color hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=> handleAddStuff(dataCarts.title,dataCarts.image,dataCarts.id,dataCarts.price,quantityStuff,dataCart.restQuantity)} >+</button>
+
+                    
 
                   </div>
 
@@ -55,7 +64,7 @@ export const CartPage = ({dataCart}) => {
             ) }
         </td>
         <td className="px-6 py-4">
-            ${dataCart?.quantity * dataCart?.price }
+            ${(dataCart?.quantity * dataCart?.price).toFixed(2) }
         </td>
     
     </>

@@ -17,7 +17,7 @@ const TxtSide = ({ title, desc, txtBtn, id }) => {
 
 const ImgSide = ({ src }) => {
   return (
-    <div className="flex w-1/3 justify-center self-center">
+    <div className="flex  w-1/3 justify-center self-center">
       <img src={src} alt="image product" className="w-52" />
     </div>
   );
