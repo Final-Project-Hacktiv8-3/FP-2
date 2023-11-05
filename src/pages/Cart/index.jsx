@@ -97,10 +97,12 @@ export const Cart = () => {
             {carts.cartItems.length > 0 ? (
                 carts.cartItems.map(carts => (
                     carts.userId === userId ? (
+                    <>
                     <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                         <CartPage dataCart={carts} /> 
             
                     </tr>   
+                    </>
 
                     ):(
                         ''
@@ -109,7 +111,7 @@ export const Cart = () => {
             ):(
                 <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                        <h1 classNameName='ml-52' >Barang tidak ditemukan</h1>
-                    </tr>   
+                </tr>   
             )}
 
         </tbody>
@@ -167,7 +169,7 @@ export const Cart = () => {
                 Why do I need to connect with my wallet?</a>
         </div>
 
-        <button type="button" className="text-white bg-color hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-36 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={()=>handlePayments()} >Payments</button>
+        <button type="button" className="text-white bg-color hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-36 py-2.5 -ml-1   dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={()=>handlePayments()} >Payments</button>
     </div>
         
         </div>

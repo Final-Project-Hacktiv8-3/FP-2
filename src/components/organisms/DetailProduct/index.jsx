@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export const DetailProduct = ({ product }) => {
-  const { title, description, image, price } = product;
+  const { title, description, image, price,id } = product;
   const [currentQuantity, setCurrentQuantity] = useState(1);
   const latest = useSelector((state) => state.latestUpdate);
   const [isShowModal, setIsShowModal] = useState(false);
@@ -38,6 +38,13 @@ export const DetailProduct = ({ product }) => {
      
     setIsShowModal(!isShowModal);
   };
+
+  const addStuff = (id) =>{
+    latest.latest.map(dataLatest => (
+      dataLatest.id === id ?  dataLatest.quantity > currentQuantity && setCurrentQuantity(currentQuantity+1) : ''
+     
+    ))
+  }
 
 
 
@@ -87,7 +94,7 @@ export const DetailProduct = ({ product }) => {
                 <Button
                   className="bg-color hover:bg-accent"
                   size="w-fit"
-                  onClick={() => setCurrentQuantity((prev) => prev + 1)}
+                  onClick={() => addStuff(id)}
                 >
                   +
                 </Button>
