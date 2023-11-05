@@ -1,20 +1,20 @@
 import PropTypes from "prop-types";
 import { Badge, Card, Rating } from "flowbite-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PiShoppingCart } from "react-icons/pi";
 import { formattedPrice } from "@utils";
 import { useEffect, useState } from "react";
 import { Modal } from "..";
 import { BsCheck2Circle } from "react-icons/bs";
-import { useDispatch} from 'react-redux';
+import { useDispatch } from "react-redux";
 import { addToCart } from "@redux/adding/action";
 
 export const ProductCard = ({ product }) => {
   const { id, title, image, price, category, rating } = product;
   const [isShowModal, setIsShowModal] = useState(false);
   const dispatch = useDispatch();
-
-
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
   useEffect(() => {
     if (isShowModal === true) {
       const timeout = setTimeout(() => {
@@ -26,10 +26,13 @@ export const ProductCard = ({ product }) => {
     }
   }, [isShowModal]);
 
-  const handleAddToCart = (title,image,id,price,quantity) => {
-
-    dispatch(addToCart(title,image,id,price,quantity));
-    setIsShowModal(!isShowModal);
+  const handleAddToCart = (title, image, id, price, quantity) => {
+    token
+      ? (dispatch(addToCart(title, image, id, price, quantity)),
+        setIsShowModal(!isShowModal))
+      : navigate("/login");
+    // dispatch(addToCart(title, image, id, price, quantity));
+    // setIsShowModal(!isShowModal);
   };
 
   return (
@@ -38,7 +41,11 @@ export const ProductCard = ({ product }) => {
         className="relative max-h-min w-full max-w-[240px] overflow-hidden border-none bg-primary text-primary dark:bg-primary dark:text-primary"
         renderImage={() => (
           <Link to={`/products/${id}`}>
-            <img src={image} alt={title} className="h-40 w-full object-contain" />
+            <img
+              src={image}
+              alt={title}
+              className="h-40 w-full object-contain"
+            />
           </Link>
         )}
       >
@@ -57,7 +64,7 @@ export const ProductCard = ({ product }) => {
               <Rating.Star />
               <p className="ml-2 text-sm">{rating.rate}</p>
             </Rating>
-            <button onClick={() => handleAddToCart(title,image,id,price,1)}>
+            <button onClick={() => handleAddToCart(title, image, id, price, 1)}>
               <PiShoppingCart className="mr-2 h-5 w-5" />
             </button>
           </div>

@@ -23,7 +23,7 @@ export const Home = () => {
       <NavBar />
       <CarouselItem />
       <Category />
-      
+
       <div className="flex items-center gap-4 px-6 md:px-12">
         <h3 className="text-center text-xl font-bold  md:text-left">
           Popular Products
