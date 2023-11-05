@@ -12,6 +12,7 @@ export default defineConfig({
       "@pages": "/src/pages",
       "@hooks": "/src/hooks",
       "@utils": "/src/utils",
+      "@redux": "/src/redux",
     },
   },
 });
