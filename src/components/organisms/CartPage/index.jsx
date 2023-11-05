@@ -28,8 +28,8 @@ export const CartPage = ({dataCart}) => {
   return (
     <>
         
-        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
-            <img className='h-52 w-32 ' src={dataCart?.image}/>
+        <th scope="row" className="px-6 py-4 bg-transparent font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+            <img className='h-52 w-32  ' src={dataCart?.image}/>
         
         </th>
         <td className="px-6 py-4">
@@ -41,9 +41,9 @@ export const CartPage = ({dataCart}) => {
                 carts.cartItems.map(dataCarts => (
                   dataCarts.id === dataCart.id ?  <>
                   <div className="flex-auto flex space-x-4">
-                   <button type="button" className="text-white  bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=> handleSubtractStuff(dataCarts.title,dataCarts.image,dataCarts.id,dataCarts.price,quantityStuff,dataCart.restQuantity)}  >-</button>
-                      <input className="required:border-red-500 text-center w-5" value={quantityStuff} /> <br/>
-                    <button type="button" className="text-white  bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=> handleAddStuff(dataCarts.title,dataCarts.image,dataCarts.id,dataCarts.price,quantityStuff,dataCart.restQuantity)} >+</button>
+                   <button type="button" className="text-white bg-color hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=> handleSubtractStuff(dataCarts.title,dataCarts.image,dataCarts.id,dataCarts.price,quantityStuff,dataCart.restQuantity)}  >-</button>
+                      <input className="required:border-red-500 bg-transparent text-center w-5" value={quantityStuff} /> <br/>
+                    <button type="button" className="text-white bg-color hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=> handleAddStuff(dataCarts.title,dataCarts.image,dataCarts.id,dataCarts.price,quantityStuff,dataCart.restQuantity)} >+</button>
 
                   </div>
 
