@@ -8,13 +8,16 @@ import { Modal } from "@components/organisms";
 import { BsCheck2Circle } from "react-icons/bs";
 import { addToCart } from "../../../redux/adding/action";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export const DetailProduct = ({ product }) => {
   const { title, description, image, price } = product;
   const [currentQuantity, setCurrentQuantity] = useState(1);
   const latest = useSelector((state) => state.latestUpdate);
   const [isShowModal, setIsShowModal] = useState(false);
+  const token = localStorage.getItem('token');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isShowModal === true) {
@@ -35,6 +38,9 @@ export const DetailProduct = ({ product }) => {
      
     setIsShowModal(!isShowModal);
   };
+
+
+
 
   return (
     <>
@@ -87,12 +93,22 @@ export const DetailProduct = ({ product }) => {
                 </Button>
               </div>
             </div>
+            {token ? (
             <Button
               className="bg-color mt-4 flex w-full items-center justify-center gap-4 text-lg font-semibold hover:bg-accent"
               onClick={() =>handleAddToCart(product?.title,product?.image,product?.id,product?.price,currentQuantity)}
             >
               <PiShoppingCartSimple size={24} /> Add to Cart
             </Button>
+
+            ):(
+              <Button
+              className="bg-color mt-4 flex w-full items-center justify-center gap-4 text-lg font-semibold hover:bg-accent"
+              onClick={() => navigate('/login')}
+            >
+              <PiShoppingCartSimple size={24} /> Add to Cart
+            </Button>
+            )}
           </div>
         </div>
       </article>
