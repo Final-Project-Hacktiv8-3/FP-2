@@ -21,12 +21,12 @@ export const Modal = ({
   return (
     showModal &&
     createPortal(
-      <div
-        data-aos="fade-down"
-        data-aos-duration="300"
-        className="bg-primary-black fixed bottom-0 left-0 right-0 top-0 z-50 flex h-screen w-full items-center justify-center overflow-y-auto overflow-x-hidden bg-opacity-50 p-4 backdrop-blur-sm md:inset-0 "
-      >
-        <div className="w-full md:w-[60%] lg:w-[45%] xl:w-[25%]">
+      <div className="fixed bottom-0 left-0 right-0 top-0 z-50 flex h-screen w-full items-center justify-center overflow-y-auto overflow-x-hidden bg-black bg-opacity-50 p-4 backdrop-blur-sm md:inset-0 ">
+        <div
+          className="w-full md:w-[60%] lg:w-[45%] xl:w-[25%]"
+          data-aos="fade-down"
+          data-aos-duration="250"
+        >
           <div className="relative w-full rounded-lg bg-white shadow">
             {modalHeader && (
               <div className="flex items-center justify-between rounded-t px-4 py-4 ">
@@ -40,7 +40,7 @@ export const Modal = ({
             )}
             <div
               data-aos="zoom-in-down"
-              data-aos-duration="300"
+              data-aos-duration="250"
               className={bodyClassName}
             >
               {children}

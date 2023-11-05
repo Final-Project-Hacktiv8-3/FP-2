@@ -6,7 +6,8 @@
       "@services/*": ["src/services/*"],
       "@lib/*": ["src/lib/*"],
       "@pages/*": ["src/pages/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@hooks/*": ["src/hooks/*"],
+      "@redux/*": ["src/redux/*"]
     }
   }
 }
