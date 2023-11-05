@@ -1,4 +1,5 @@
 export * from "./modal";
+export * from "./card";
 export * from "./NavBar";
 export * from "./CarouselItem";
 export * from "./Category";

@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Home, Products, Detail,Cart,Login,Category } from "@pages";
+import { Home, Products, Detail, Cart, Login, Category } from "@pages";
 import { Flowbite } from "flowbite-react";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import store from "@redux/store";
 import { Wrapper } from "@components/template";
 
 export const Router = createBrowserRouter([
