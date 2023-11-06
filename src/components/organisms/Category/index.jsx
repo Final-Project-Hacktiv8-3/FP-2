@@ -8,25 +8,21 @@ const categories = [
   {
     id: 1,
     name: "men's clothing",
-    image: "../category/men.png",
     icon: <PiTShirt size={sizeIcon} />,
   },
   {
     id: 2,
     name: "women's clothing",
-    image: "../category/women.png",
     icon: <PiDress size={sizeIcon} />,
   },
   {
     id: 3,
     name: "electronics",
-    image: "../category/electronic.png",
     icon: <PiDesktop size={sizeIcon} />,
   },
   {
     id: 4,
     name: "jewelery",
-    image: "../category/jewelery.png",
     icon: <PiSketchLogo size={sizeIcon} />,
   },
 ];
