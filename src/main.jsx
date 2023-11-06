@@ -2,15 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Home, Products, Detail,Cart,Login,Category } from "@pages";
+import { Home, Products, Detail,Cart,Login,Category,Admin,Rekapan } from "@pages";
 import { Flowbite } from "flowbite-react";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { Wrapper } from "@components/template";
+// import { GuardOnly } from "./components/organisms/GuardOnly";
 
 export const Router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <Home />,
   },
   {
@@ -32,6 +33,14 @@ export const Router = createBrowserRouter([
   {
     path: "/category/:nama",
     element: <Category />,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
+  },
+   {
+    path: "/rekapan",
+    element: <Rekapan />,
   },
 ]);
 

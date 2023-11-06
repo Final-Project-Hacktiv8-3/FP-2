@@ -1,6 +1,7 @@
 import { Label, TextInput } from "flowbite-react";
 import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { NavBar } from "@components/organisms";
 import axios from 'axios'
 
 export const Login = () => {
@@ -26,14 +27,14 @@ export const Login = () => {
 
     const handleSubmit = async() =>{
         if(form.username === 'admin@bukapedia.com'&& form.password === 'admin123'){
-            navigate('/home/admin');
+            navigate('/admin');
             localStorage.setItem('token',"credentials");
         }else{
             const res = await axios.post('https://fakestoreapi.com/auth/login',form)
             .then(resp=> {
                 tempData.forEach((dataUser)=>{
                     if(dataUser.username === form.username){
-                        resp.status === 200 && navigate(`/home`)
+                        resp.status === 200 && navigate(`/`)
                         localStorage.setItem('token',resp.data.token);
                         localStorage.setItem('userId',dataUser.id);
                     }
@@ -49,6 +50,7 @@ export const Login = () => {
     }
     return (
       <>
+      <NavBar/>
          <div className='grid h-screen place-items-center'>
 
 <div className="w-full max-w-sm  p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
@@ -72,7 +74,7 @@ export const Login = () => {
             
         </div>
     </form>
-        <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={()=>handleSubmit()} >Login to your account</button>
+        <button type="submit" className="w-full text-white bg-color hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={()=>handleSubmit()} >Login to your account</button>
        
 </div>
 
