@@ -6,7 +6,7 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import { Home, Products, Detail, Cart, Login, Category } from "@pages";
+import { Home, Products, Detail, Cart, Login, Category,Admin,Rekapan } from "@pages";
 import { Flowbite } from "flowbite-react";
 import { Provider } from "react-redux";
 import store from "@redux/store";
@@ -40,6 +40,14 @@ export const Router = createBrowserRouter([
   {
     path: "/category/:nama",
     element: <Category />,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
+  },
+  {
+    path: "/rekapan",
+    element: <Rekapan />,
   },
 ]);
 
