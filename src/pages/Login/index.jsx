@@ -42,7 +42,6 @@ export const Login = () => {
     username: "",
     password: "",
   });
-  console.log(form.password);
 
   const handleSubmit = async () => {
     if (
@@ -61,7 +60,6 @@ export const Login = () => {
                 resp.status === 200 && setIsShowModal(!isShowModal);
                 localStorage.setItem("token", resp.data.token);
                 localStorage.setItem("userId", dataUser.id);
-                console.log(resp.data);
               }
             });
           });
