@@ -4,6 +4,7 @@ import {
   Category,
   HeroProduct,
   ProductCard,
+  Footer,
 } from "@components/organisms";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -52,6 +53,7 @@ export const Home = () => {
         desc="Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty"
         txtBtn="See Product"
       />
+      <Footer />
     </>
   );
 };
