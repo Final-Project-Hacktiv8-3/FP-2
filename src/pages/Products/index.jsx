@@ -1,4 +1,4 @@
-import { Card, NavBar } from "@components/organisms";
+import { Card, Footer, NavBar } from "@components/organisms";
 import { useFetchData } from "@hooks/useFetchData";
 import { useEffect, useState } from "react";
 
@@ -74,6 +74,7 @@ export const Products = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

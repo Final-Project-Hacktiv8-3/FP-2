@@ -1,4 +1,4 @@
-import { NavBar, DetailProduct } from "@components/organisms";
+import { NavBar, DetailProduct, Footer } from "@components/organisms";
 import { useFetchData } from "@hooks/useFetchData";
 import { useParams } from "react-router-dom";
 
@@ -19,6 +19,7 @@ export const Detail = () => {
           {data && <DetailProduct product={data} />}
         </section>
       </div>
+      <Footer />
     </>
   );
 };
