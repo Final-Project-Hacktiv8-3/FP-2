@@ -1,4 +1,4 @@
-import { NavBar, ProductCard } from "@components/organisms";
+import { Footer, NavBar, ProductCard } from "@components/organisms";
 import { useFetchData } from "@hooks/useFetchData";
 import { useParams } from "react-router-dom";
 
@@ -23,6 +23,7 @@ export const Category = () => {
           ))}
         </section>
       </div>
+      <Footer />
     </>
   );
 };
