@@ -6,7 +6,17 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import { Home, Products, Detail, Cart, Login, Category,Admin,Rekapan } from "@pages";
+import {
+  Home,
+  Products,
+  Detail,
+  Cart,
+  Login,
+  Category,
+  Admin,
+  Rekapan,
+  About,
+} from "@pages";
 import { Flowbite } from "flowbite-react";
 import { Provider } from "react-redux";
 import store from "@redux/store";
@@ -48,6 +58,10 @@ export const Router = createBrowserRouter([
   {
     path: "/rekapan",
     element: <Rekapan />,
+  },
+  {
+    path: "/about",
+    element: <About />,
   },
 ]);
 

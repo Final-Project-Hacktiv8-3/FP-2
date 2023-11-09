@@ -6,4 +6,4 @@ export * from "./Login";
 export * from "./Category";
 export * from "./Admin";
 export * from "./Rekapan";
-
+export * from "./About";
