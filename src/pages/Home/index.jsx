@@ -38,21 +38,31 @@ export const Home = () => {
           return <ProductCard key={product.id} product={product} />;
         })}
       </div>
-
-      <HeroProduct
-        id={5}
-        src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
-        title="John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet"
-        desc="From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection."
-      />
-      <HeroProduct
-        side
-        id={12}
-        src="https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
-        title="WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive"
-        desc="Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty"
-        txtBtn="See Product"
-      />
+      {products.data.slice(4, 8).map((product) => {
+        if (product.id % 2 === 0) {
+          return (
+            <HeroProduct
+              key={product.id}
+              id={product.id}
+              src={product.image}
+              title={product.title}
+              desc={product.description}
+            />
+          );
+        } else {
+          return (
+            <HeroProduct
+              key={product.id}
+              side
+              id={product.id}
+              src={product.image}
+              title={product.title}
+              desc={product.description}
+              txtBtn="See Product"
+            />
+          );
+        }
+      })}
       <Footer />
     </>
   );

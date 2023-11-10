@@ -7,7 +7,7 @@ const TxtSide = ({ title, desc, txtBtn, id }) => {
       <h2 className="text-xl font-bold lg:text-4xl">{title || "Title"}</h2>
       <p className="my-3 text-sm lg:text-base">{desc || "Description"}</p>
       <Link to={`/products/${id}`}>
-        <button className="bg-color mt-4 w-full rounded-none px-4 py-2 text-primary">
+        <button className="mt-4 w-full rounded-none bg-color px-4 py-2 text-primary">
           {txtBtn || "Discover Now"}
         </button>
       </Link>
@@ -25,7 +25,11 @@ const ImgSide = ({ src }) => {
 
 export const HeroProduct = ({ id, src, title, desc, txtBtn, side }) => {
   return (
-    <div className="mt-16 flex flex-col justify-around gap-y-8 px-10 py-12 lg:flex-row">
+    <div
+      className={`mt-16 flex flex-col justify-around gap-y-8 px-10 py-12 lg:flex-row ${
+        side ? "flex-col-reverse" : ""
+      }`}
+    >
       {side === true ? (
         <>
           <TxtSide id={id} title={title} desc={desc} txtBtn={txtBtn} />
