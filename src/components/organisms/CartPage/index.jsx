@@ -76,7 +76,7 @@ export const CartPage = ({dataCart,productsLatest}) => {
         <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">
         {carts.cartItems.length ? (
                 carts.cartItems.map(dataCarts => (
-                  dataCarts.id === dataCart.id ?  <>
+                  dataCarts.id === dataCart.id && token !== 'credentials' ?  <>
                   <div className="flex-auto flex space-x-4">
                    <button type="button" className="text-white bg-color hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=> handleSubtractStuff(dataCarts.title,dataCarts.image,dataCarts.id,dataCarts.price,quantityStuff,dataCart.restQuantity) }  >-</button>
                       <input className="required:border-red-500 bg-transparent text-center w-5" value={quantityStuff} /> <br/>
