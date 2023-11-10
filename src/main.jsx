@@ -16,6 +16,7 @@ import {
   Admin,
   Rekapan,
   About,
+  NotFound,
 } from "@pages";
 import { Flowbite } from "flowbite-react";
 import { Provider } from "react-redux";
@@ -62,6 +63,10 @@ export const Router = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
