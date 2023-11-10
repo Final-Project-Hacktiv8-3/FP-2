@@ -3,7 +3,7 @@ export const developer = [
     name: "Shidqi Amirul Haq",
     id: "RCTN-KS09-015",
     university: "Institut Teknologi Garut",
-    image: "https://eu.ui-avatars.com/api/?name=Shidqi+Amirul+Haq&size=144",
+    image: "https://avatars.githubusercontent.com/u/117028911?v=4",
     social: [
       {
         name: "github",
