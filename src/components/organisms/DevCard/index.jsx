@@ -5,7 +5,7 @@ export const DevCard = ({ data }) => {
   const { name, id, university, image, social } = data;
 
   return (
-    <div className="flex h-[300px] w-60 flex-col rounded-lg shadow-md shadow-black">
+    <div className="flex h-[300px] w-60 flex-col items-center justify-center rounded-lg shadow-md shadow-black">
       <div className="flex items-center justify-center">
         <figure className="h-36 w-36">
           <img
