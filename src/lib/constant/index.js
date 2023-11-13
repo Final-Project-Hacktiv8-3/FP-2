@@ -23,4 +23,16 @@ export const developer = [
       },
     ],
   },
+  {
+    name: "Luthfi Ahmad Fauzi",
+    id: "RCTN-KS09-01",
+    university: "Universitas Islam Nusantara",
+    image: "https://avatars.githubusercontent.com/u/110830417?v=4",
+    social: [
+      {
+        name: "github",
+        link: "https://github.com/luthfiahmdf",
+      },
+    ],
+  },
 ];

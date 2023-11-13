@@ -60,6 +60,7 @@ export const Login = () => {
                 resp.status === 200 && setIsShowModal(!isShowModal);
                 localStorage.setItem("token", resp.data.token);
                 localStorage.setItem("userId", dataUser.id);
+                localStorage.setItem("name", dataUser.name.firstname);
               }
             });
           });
