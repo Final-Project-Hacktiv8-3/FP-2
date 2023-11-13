@@ -86,7 +86,7 @@ export const NavBar = () => {
               }
             >
               <Dropdown.Header>
-                <span className="block text-sm">
+                <span className="block text-sm text-black font-bold">
                   {token === "credentials" ? "Admin" : name}
                   {/* Username */}
                 </span>

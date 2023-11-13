@@ -85,7 +85,7 @@ export const Login = () => {
             </h5>
             <div>
               <Label
-                for="email"
+                htmlFor="email"
                 className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
               >
                 Your username
@@ -103,7 +103,7 @@ export const Login = () => {
             </div>
             <div>
               <Label
-                for="password"
+                htmlFor="password"
                 className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
               >
                 Your password
