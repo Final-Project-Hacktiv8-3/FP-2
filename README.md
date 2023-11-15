@@ -18,13 +18,13 @@ Project ini dibuat menggunakan React sebagai Front-End library dan Redux sebagai
 Clone the project
 
 ```bash
-  git clone https://github.com/Final-Project-Hacktiv8-3/FP-2
+  git clone https://github.com/Final-Project-Hacktiv8-3/Final-Project-2
 ```
 
 Go to the project directory
 
 ```bash
-  cd FP-2
+  cd Final-Project-2
 ```
 
 Install dependencies
