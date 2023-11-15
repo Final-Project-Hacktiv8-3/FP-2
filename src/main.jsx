@@ -23,6 +23,14 @@ import { Provider } from "react-redux";
 import store from "@redux/store";
 import { Wrapper } from "@components/template";
 
+function isUserAuthenticated() {
+  const token = localStorage.getItem("token");
+  if(token) {
+    return true; 
+
+  }
+}
+
 export const Router = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +50,7 @@ export const Router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <Cart />,
+    element: isUserAuthenticated() ? <Cart /> : <Navigate to="/home" />,
   },
   {
     path: "/login",
@@ -54,11 +62,11 @@ export const Router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <Admin />,
+    element: isUserAuthenticated() ? <Admin /> : <Navigate to="/home" />,
   },
   {
     path: "/rekapan",
-    element: <Rekapan />,
+    element: isUserAuthenticated() ? <Rekapan /> : <Navigate to="/home" />,
   },
   {
     path: "/about",

@@ -5,6 +5,7 @@ import axios from "axios";
 import { BsCheck2Circle } from "react-icons/bs";
 import { BiErrorCircle } from "react-icons/bi";
 import { Modal } from "@components/organisms";
+import { NavBar } from "@components/organisms";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -77,6 +78,7 @@ export const Login = () => {
   };
   return (
     <>
+    <NavBar/>
       <div className="grid h-screen place-items-center">
         <div className="w-full max-w-sm  rounded-lg border border-gray-200 bg-white p-4 shadow dark:border-gray-700 dark:bg-gray-800 sm:p-6 md:p-8">
           <form className="space-y-6 " action="#">
@@ -85,8 +87,8 @@ export const Login = () => {
             </h5>
             <div>
               <Label
-                htmlFor="email"
-                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="email" 
+                
               >
                 Your username
               </Label>
@@ -94,7 +96,7 @@ export const Login = () => {
                 type="text"
                 name="username"
                 id="email"
-                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
+                className="mt-3"
                 placeholder="name@company.com"
                 value={form.username}
                 onChange={(e) => handleChange(e)}
@@ -104,7 +106,7 @@ export const Login = () => {
             <div>
               <Label
                 htmlFor="password"
-                className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                
               >
                 Your password
               </Label>
@@ -113,8 +115,8 @@ export const Login = () => {
                 name="password"
                 value={form.password}
                 id="password"
+                className="mt-3"
                 placeholder="••••••••"
-                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
                 onChange={(e) => handleChange(e)}
                 required
               />

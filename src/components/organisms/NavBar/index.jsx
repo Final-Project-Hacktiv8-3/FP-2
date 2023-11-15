@@ -15,7 +15,6 @@ export const NavBar = () => {
     localStorage.removeItem("userId");
     localStorage.removeItem("token");
     localStorage.removeItem("name");
-    window.location.reload();
   };
 
   const total = cart.cartItems.reduce((accumulator, cart) => {
