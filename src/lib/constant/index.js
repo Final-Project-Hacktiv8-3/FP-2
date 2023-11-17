@@ -36,3 +36,15 @@ export const developer = [
     ],
   },
 ];
+
+export const carouselImage = [
+  {
+    src: "https://images.tokopedia.net/img/cache/1208/NsjrJu/2023/11/14/38be4962-14b9-4dc1-91bf-6d4d988d9d49.jpg.webp?ect=4g",
+  },
+  {
+    src: "https://images.tokopedia.net/img/cache/1208/NsjrJu/2023/11/15/57bc0fc8-6d45-4965-bd55-8d4a19783761.jpg.webp?ect=4g",
+  },
+  {
+    src: "https://images.tokopedia.net/img/cache/1208/NsjrJu/2023/11/15/ed4aae29-d8af-4ff8-afd7-24070b83e791.jpg.webp?ect=4g",
+  },
+];
