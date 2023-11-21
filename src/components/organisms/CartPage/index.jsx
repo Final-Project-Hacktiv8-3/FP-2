@@ -43,7 +43,8 @@ export const CartPage = ({dataCart,productsLatest}) => {
     }
   
     const handleSubs = () =>{
-      setKuantitas(kuantitas-1)
+       setKuantitas((prev)=> prev-1)
+      kuantitas <= 0 && setKuantitas(0)
     }
   
     const handleUpdate = (id,quantity) =>{
